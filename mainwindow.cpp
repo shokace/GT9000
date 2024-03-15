@@ -3,8 +3,10 @@
 #include <QPushButton>
 #include <QFrame>
 #include <QVBoxLayout>
+#include <QIcon>
 
 #include "mainwindow.h"
+#include "CustomToolButton.h"
 #include "settingsdialog.h"
 #include "ui_mainwindow.h"
 #include "unitdialog.h"
@@ -21,7 +23,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setWindowTitle("GT9000");
-    ui->exitButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+
+    ui->exitButton = new CustomToolButton;
+    ui->exitButton->setText("TEST");
+    //ui->exitButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 }
 
