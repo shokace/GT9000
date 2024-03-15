@@ -147,6 +147,13 @@ QPushButton:default {
           </widget>
          </item>
          <item>
+          <widget class="Line" name="line_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QFrame" name="frame_3">
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -246,8 +253,15 @@ QPushButton:default {
                    <height>50</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>-1</pointsize>
+                   <bold>false</bold>
+                   <kerning>true</kerning>
+                  </font>
+                 </property>
                  <property name="text">
-                  <string>Sites Reference</string>
+                  <string>SITES REFERENCE</string>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -255,9 +269,19 @@ QPushButton:default {
                    <height>50</height>
                   </size>
                  </property>
+                 <property name="autoDefault">
+                  <bool>true</bool>
+                 </property>
                 </widget>
                </item>
               </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
              </widget>
             </item>
             <item>
