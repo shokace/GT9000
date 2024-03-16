@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     customtoolbutton.cpp \
+    inputsdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     settingsdialog.cpp \
@@ -18,12 +19,14 @@ SOURCES += \
 
 HEADERS += \
     customtoolbutton.h \
+    inputsdialog.h \
     mainwindow.h \
     settingsdialog.h \
     systemdialog.h \
     unitdialog.h
 
 FORMS += \
+    inputsdialog.ui \
     mainwindow.ui \
     settingsdialog.ui \
     systemdialog.ui \

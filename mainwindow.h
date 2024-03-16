@@ -27,6 +27,8 @@ private slots:
 
     void on_systemButton_clicked();
 
+    void on_inputsButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 

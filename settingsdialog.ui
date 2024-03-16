@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1502</width>
-    <height>933</height>
+    <width>650</width>
+    <height>870</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,18 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>870</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>875</width>
+    <height>870</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -30,15 +42,44 @@ QFrame {
 }
 
 QTabWidget {
-    border: 1px solid #1f1f1f;
-    border-radius: 2px;
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #464646, stop: 1 #2f2f2f);
+	border: 1px sollid #464646;
 	color: white;
     min-width: 90px;
 	text-align: bottom;
 	font-size: 16px;
 }
+
+
+
+
+QTabBar::tab:selected {
+
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #464646, stop: 1 #2f2f2f);
+	border: 1px sollid #464646;
+	color: white;
+    min-width: 90px;
+	min-height: 50px;
+
+	font-size: 16px;
+}
+
+QTabBar::tab:!selected {
+    border: 1px solid #1f1f1f;
+
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #464646, stop: 1 #2f2f2f);
+	color: white;
+    min-width: 90px;
+	min-height: 50px;
+
+	font-size: 16px;
+}
+
+
+
 
 QPushButton {
 	
@@ -52,6 +93,10 @@ QPushButton {
 	font-size: 16px;
 }
 
+QLabel { 
+	color: white; 
+}
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                       stop: 0 #2f2f2f, stop: 1 #464646);
@@ -63,6 +108,12 @@ QPushButton:flat {
 
 QPushButton:default {
     border-color: navy; /* make the default button prominent */
+}
+
+QLineEdit {
+	background-color: rgb(34, 34, 34);
+
+
 }
 
 
@@ -136,12 +187,39 @@ QPushButton:default {
          </property>
          <item>
           <widget class="QTabWidget" name="tabWidget">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>90</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="tabPosition">
+            <enum>QTabWidget::North</enum>
+           </property>
+           <property name="tabShape">
+            <enum>QTabWidget::Rounded</enum>
+           </property>
            <property name="currentIndex">
             <number>0</number>
            </property>
+           <property name="elideMode">
+            <enum>Qt::ElideNone</enum>
+           </property>
            <widget class="QWidget" name="tab">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <attribute name="title">
-             <string>Tab 1</string>
+             <string>Slot 0</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
@@ -155,33 +233,58 @@ QPushButton:default {
                <property name="minimumSize">
                 <size>
                  <width>50</width>
-                 <height>0</height>
+                 <height>80</height>
                 </size>
                </property>
                <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+                <enum>QFrame::WinPanel</enum>
                </property>
                <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
+                <enum>QFrame::Sunken</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <property name="leftMargin">
+                 <number>10</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="label">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <pointsize>9</pointsize>
                    </font>
                   </property>
                   <property name="text">
-                   <string>CLOCK REFERENCE</string>
+                   <string>CLOCK
+REFERENCE</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="pushButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="minimumSize">
                    <size>
-                    <width>100</width>
+                    <width>92</width>
                     <height>50</height>
                    </size>
                   </property>
@@ -233,7 +336,7 @@ QPushButton:default {
                         </font>
                        </property>
                        <property name="text">
-                        <string>CHANNEL A</string>
+                        <string>Channel A</string>
                        </property>
                       </widget>
                      </item>
@@ -255,6 +358,272 @@ QPushButton:default {
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <widget class="QFrame" name="frame_9">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>130</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_7">
+                        <item>
+                         <widget class="QLabel" name="polarity">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Polarity</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_4">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="impedance">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Impedance</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_5">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="coupling">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Coupling</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_6">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="threshold">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Threshold</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_7">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="frequency">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::LeftToRight</enum>
+                          </property>
+                          <property name="text">
+                           <string>Frequency</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_8">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_10">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_9">
+                        <item>
+                         <widget class="QPushButton" name="pushButton_3">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>Positive</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_4">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>50 Ohm</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>DC</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>20</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>0.000</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_8">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>1 Hz</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                  </layout>
@@ -275,6 +644,312 @@ QPushButton:default {
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="QFrame" name="frame_7">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <item>
+                      <widget class="QLabel" name="label_3">
+                       <property name="font">
+                        <font>
+                         <pointsize>15</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Channel B</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="Line" name="line_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_8">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <item>
+                      <widget class="QFrame" name="frame_12">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>130</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_8">
+                        <item>
+                         <widget class="QLabel" name="polarity_2">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Polarity</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_9">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="impedance_2">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Impedance</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_10">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="coupling_2">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Coupling</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_11">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="threshold_2">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Threshold</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_12">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="frequency_2">
+                          <property name="font">
+                           <font>
+                            <pointsize>9</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>Frequency</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_13">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_11">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_10">
+                        <item>
+                         <widget class="QPushButton" name="pushButton_6">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>Positive</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_5">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>50 Ohm</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_7">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>DC</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="lineEdit_4">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>20</pointsize>
+                           </font>
+                          </property>
+                          <property name="text">
+                           <string>0.000</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="pushButton_9">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>92</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>1 Hz</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -283,7 +958,7 @@ QPushButton:default {
            </widget>
            <widget class="QWidget" name="tab_2">
             <attribute name="title">
-             <string>Tab 2</string>
+             <string>Slot 1</string>
             </attribute>
            </widget>
           </widget>

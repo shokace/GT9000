@@ -7,6 +7,7 @@
 
 #include "mainwindow.h"
 #include "CustomToolButton.h"
+#include "inputsdialog.h"
 #include "settingsdialog.h"
 #include "ui_mainwindow.h"
 #include "unitdialog.h"
@@ -70,5 +71,13 @@ void MainWindow::on_systemButton_clicked()
     systemDialog systemDialog(topFrame, this);
     systemDialog.setModal(true);
     systemDialog.exec();
+}
+
+
+void MainWindow::on_inputsButton_clicked()
+{
+    inputsDialog inputsDialog;
+    inputsDialog.setModal(true);
+    inputsDialog.exec();
 }
 

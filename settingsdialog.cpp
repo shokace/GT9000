@@ -6,7 +6,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     , ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
-    this->setWindowState(Qt::WindowFullScreen);
+    this->setWindowFlags(Qt::CustomizeWindowHint);
 
 }
 
