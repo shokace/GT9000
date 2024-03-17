@@ -8,28 +8,13 @@
 
 
 
-/*systemDialog::systemDialog(const QRect &frameGeometry, QWidget *parent) : QDialog(parent), ui(new Ui::systemDialog)
-{
-    ui->setupUi(this);
-    this->setWindowFlags(Qt::CustomizeWindowHint);
-
-    if (parent != nullptr) {
-        // Get the geometry of the parent (main window)
-        int dialogY = parent->geometry().y() + frameGeometry.height(); // Adjust based on frame's height
-        this->move(parent->geometry().x(), dialogY);
-        // Calculate the top-left position for the dialog
-        int dialogX = frameGeometry.x();
 
 
-        // Move the dialog to the calculated position
-        this->move(dialogX, dialogY);
-    }
-
-}*/
 systemDialog::systemDialog(QWidget *parent) : QDialog(parent), ui(new Ui::systemDialog)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint);
+
 }
 
 

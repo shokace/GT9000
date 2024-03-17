@@ -52,6 +52,13 @@ void MainWindow::on_settingsButton_clicked()
 {
     SettingsDialog settingsDialog;
     settingsDialog.setModal(true);
+
+    settingsDialog.adjustSize();
+    QRect mainWindowGeometry = this->geometry();
+    int dialogX = mainWindowGeometry.x() + 188; // 10 pixels from the left edge of the main window
+    int dialogY = mainWindowGeometry.y() + 100; // 10 pixels from the top edge of the main window
+
+    settingsDialog.move(dialogX, dialogY);
     settingsDialog.exec();
 }
 
@@ -61,6 +68,14 @@ void MainWindow::on_unitsButton_clicked()
 {
     unitDialog unitDialog;
     unitDialog.setModal(true);
+
+    unitDialog.adjustSize();
+    QRect mainWindowGeometry = this->geometry();
+    int dialogX = mainWindowGeometry.x() + 280; // 10 pixels from the left edge of the main window
+    int dialogY = mainWindowGeometry.y() + 100; // 10 pixels from the top edge of the main window
+
+    unitDialog.move(dialogX, dialogY);
+
     unitDialog.exec();
 }
 
@@ -71,6 +86,15 @@ void MainWindow::on_systemButton_clicked()
     //systemDialog systemDialog(topFrame, this);
     systemDialog systemDialog;
     systemDialog.setModal(true);
+
+
+    systemDialog.adjustSize();
+    QRect mainWindowGeometry = this->geometry();
+    int dialogX = mainWindowGeometry.x() + 5; // 10 pixels from the left edge of the main window
+    int dialogY = mainWindowGeometry.y() + 100; // 10 pixels from the top edge of the main window
+
+    systemDialog.move(dialogX, dialogY);
+
     systemDialog.exec();
 }
 
@@ -79,6 +103,14 @@ void MainWindow::on_inputsButton_clicked()
 {
     inputsDialog inputsDialog;
     inputsDialog.setModal(true);
+
+
+    inputsDialog.adjustSize();
+    QRect mainWindowGeometry = this->geometry();
+    int dialogX = mainWindowGeometry.x() + 97; // 10 pixels from the left edge of the main window
+    int dialogY = mainWindowGeometry.y() + 100; // 10 pixels from the top edge of the main window
+
+    inputsDialog.move(dialogX, dialogY);
     inputsDialog.exec();
 }
 
