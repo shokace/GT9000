@@ -31,7 +31,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow { 
+   <string notr="true"> QMainWindow { 
 
 	background-color: rgb(66, 66, 66);
 }
@@ -225,7 +225,7 @@ QPushButton:default {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>INPUTS</string>
+            <string>CONFIG</string>
            </property>
           </widget>
          </item>
@@ -247,7 +247,8 @@ QPushButton:default {
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>SETTINGS</string>
+            <string>INPUT
+SETTINGS</string>
            </property>
           </widget>
          </item>
@@ -503,6 +504,13 @@ QPushButton:default {
              <property name="bottomMargin">
               <number>2</number>
              </property>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
              <item>
               <widget class="QFrame" name="frame_6">
                <property name="sizePolicy">
