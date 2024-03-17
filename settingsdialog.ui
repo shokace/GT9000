@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>870</height>
+    <width>700</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>650</width>
-    <height>870</height>
+    <width>700</width>
+    <height>670</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -156,6 +156,12 @@ QLineEdit {
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QFrame" name="settingsFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -181,7 +187,7 @@ QLineEdit {
       <item>
        <widget class="QFrame" name="frame">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -189,7 +195,7 @@ QLineEdit {
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>750</height>
+          <height>0</height>
          </size>
         </property>
         <property name="frameShape">
@@ -217,14 +223,14 @@ QLineEdit {
          <item>
           <widget class="QTabWidget" name="tabWidget">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>290</width>
+             <width>0</width>
              <height>0</height>
             </size>
            </property>
@@ -329,6 +335,12 @@ REFERENCE</string>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item>
                 <widget class="QFrame" name="frame_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -391,7 +403,7 @@ REFERENCE</string>
                      <item>
                       <widget class="QFrame" name="frame_9">
                        <property name="sizePolicy">
-                        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
@@ -411,6 +423,12 @@ REFERENCE</string>
                        <layout class="QVBoxLayout" name="verticalLayout_7">
                         <item>
                          <widget class="QLabel" name="polarity">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -436,6 +454,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="impedance">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -461,6 +485,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="coupling">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -486,6 +516,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="threshold">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -511,6 +547,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="frequency">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -539,6 +581,12 @@ REFERENCE</string>
                      </item>
                      <item>
                       <widget class="QFrame" name="frame_10">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
                        </property>
@@ -549,7 +597,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_3">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -568,7 +616,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_4">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -587,7 +635,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_2">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -606,7 +654,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QLineEdit" name="lineEdit">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -633,7 +681,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_8">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -667,6 +715,12 @@ REFERENCE</string>
                </item>
                <item>
                 <widget class="QFrame" name="frame_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
                  </property>
@@ -729,7 +783,7 @@ REFERENCE</string>
                      <item>
                       <widget class="QFrame" name="frame_12">
                        <property name="sizePolicy">
-                        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
@@ -749,6 +803,12 @@ REFERENCE</string>
                        <layout class="QVBoxLayout" name="verticalLayout_8">
                         <item>
                          <widget class="QLabel" name="polarity_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -771,6 +831,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="impedance_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -793,6 +859,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="coupling_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -815,6 +887,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="threshold_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -837,6 +915,12 @@ REFERENCE</string>
                         </item>
                         <item>
                          <widget class="QLabel" name="frequency_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
                           <property name="font">
                            <font>
                             <pointsize>9</pointsize>
@@ -862,6 +946,12 @@ REFERENCE</string>
                      </item>
                      <item>
                       <widget class="QFrame" name="frame_11">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
                        </property>
@@ -872,7 +962,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_6">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -891,7 +981,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_5">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -910,7 +1000,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_7">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -929,7 +1019,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QLineEdit" name="lineEdit_4">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -956,7 +1046,7 @@ REFERENCE</string>
                         <item>
                          <widget class="QPushButton" name="pushButton_9">
                           <property name="sizePolicy">
-                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                             <horstretch>0</horstretch>
                             <verstretch>0</verstretch>
                            </sizepolicy>
@@ -998,7 +1088,7 @@ REFERENCE</string>
       <item>
        <widget class="QFrame" name="bottomButtonFrame">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
