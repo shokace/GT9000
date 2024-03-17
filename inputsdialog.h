@@ -15,6 +15,11 @@ public:
     explicit inputsDialog(QWidget *parent = nullptr);
     ~inputsDialog();
 
+private slots:
+    void on_okButton_clicked();
+
+    void on_discardButton_clicked();
+
 private:
     Ui::inputsDialog *ui;
 };

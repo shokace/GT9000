@@ -67,8 +67,9 @@ void MainWindow::on_unitsButton_clicked()
 
 void MainWindow::on_systemButton_clicked()
 {
-    QRect topFrame = ui->topFrame->geometry();
-    systemDialog systemDialog(topFrame, this);
+    //QRect topFrame = ui->topFrame->geometry();
+    //systemDialog systemDialog(topFrame, this);
+    systemDialog systemDialog;
     systemDialog.setModal(true);
     systemDialog.exec();
 }

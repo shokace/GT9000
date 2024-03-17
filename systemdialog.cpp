@@ -8,7 +8,7 @@
 
 
 
-systemDialog::systemDialog(const QRect &frameGeometry, QWidget *parent) : QDialog(parent), ui(new Ui::systemDialog)
+/*systemDialog::systemDialog(const QRect &frameGeometry, QWidget *parent) : QDialog(parent), ui(new Ui::systemDialog)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::CustomizeWindowHint);
@@ -25,7 +25,13 @@ systemDialog::systemDialog(const QRect &frameGeometry, QWidget *parent) : QDialo
         this->move(dialogX, dialogY);
     }
 
+}*/
+systemDialog::systemDialog(QWidget *parent) : QDialog(parent), ui(new Ui::systemDialog)
+{
+    ui->setupUi(this);
+    this->setWindowFlags(Qt::CustomizeWindowHint);
 }
+
 
 
 systemDialog::~systemDialog()

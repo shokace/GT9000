@@ -12,7 +12,8 @@ class systemDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit systemDialog(const QRect &frameGeometry, QWidget *parent = nullptr);
+    explicit systemDialog(QWidget *parent = nullptr);
+    //explicit systemDialog(const QRect &frameGeometry, QWidget *parent = nullptr);
     ~systemDialog();
 
 private slots:
