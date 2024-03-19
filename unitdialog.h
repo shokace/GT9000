@@ -28,6 +28,8 @@ private slots:
 
     void on_picosecondsButton_clicked();
 
+    //void setYAxisRange(double minY, double maxY);
+
 private:
     Ui::unitDialog *ui;
 };

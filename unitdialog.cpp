@@ -9,6 +9,13 @@ unitDialog::unitDialog(QWidget *parent) :
     this->setWindowFlags(Qt::CustomizeWindowHint);
 }
 
+/*void unitDialog::setYAxisRange(double minY, double maxY) {
+    QValueAxis *axisY = qobject_cast<QValueAxis *>(chart->axes(Qt::Vertical).first());
+    if (axisY) {
+        axisY->setRange(minY, maxY);
+    }
+}*/
+
 unitDialog::~unitDialog()
 {
     delete ui;
@@ -16,6 +23,7 @@ unitDialog::~unitDialog()
 
 void unitDialog::on_secondsButton_clicked()
 {
+
     this->close();
 }
 

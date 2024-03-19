@@ -9,6 +9,7 @@
 #include <QChartView>
 #include <QRandomGenerator>
 #include <QtCharts/QValueAxis>
+#include <QDebug>
 
 
 
@@ -26,6 +27,18 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 {
     ui->setupUi(this);
     this->setWindowTitle("GT9000");
+
+    /*
+     *
+     * TIMER UPDATER
+     *
+     */
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateChartData);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateLabels);
+    //timer->start(100); // Update every x milliseconds
+
+
 
 
     series = new QLineSeries();
@@ -47,15 +60,6 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     chart->legend()->hide();
 
 
-    /*
-     *
-     * TIMER UPDATER
-     *
-     */
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &MainWindow::updateChartData);
-    timer->start(100); // Update every x milliseconds
-
 
 
 
@@ -74,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     axisX->setTitleText("Sample Number");
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
-    chart->setBackgroundBrush(QBrush(QColor(70,70,70)));
+    chart->setBackgroundBrush(QBrush(QColor(50,50,50)));
     axisX->setTitleBrush(labelsBrush);
     axisX->setLinePen(axisPen);
     axisX->setLabelsBrush(labelsBrush);
@@ -109,6 +113,19 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
         axisY->setGridLinePen(gridPen);
     }
 
+
+}
+
+void MainWindow::updateLabels(){
+
+    int pointCount = series->count();
+    QString pointCountStr = QString::number(pointCount);
+    ui->countLabel->setText(pointCountStr);
+
+
+    //pk2pk needs to do op as chart is being updated...
+
+
 }
 
 void MainWindow::updateChartData() {
@@ -131,7 +148,6 @@ void MainWindow::updateChartData() {
         axisX->setRange(0, x);
     }
 
-
     // Adjust the y-axis range
     QValueAxis *axisY = qobject_cast<QValueAxis *>(chart->axes(Qt::Vertical).first());
     axisY->setRange(-1, 1);
@@ -140,6 +156,9 @@ void MainWindow::updateChartData() {
 
 MainWindow::~MainWindow()
 {
+    delete timer;
+    delete chart;
+    delete series;
     delete ui;
 }
 
@@ -179,7 +198,6 @@ void MainWindow::on_unitsButton_clicked()
     int dialogY = mainWindowGeometry.y() + 100;
 
     unitDialog.move(dialogX, dialogY);
-
     unitDialog.exec();
 }
 
@@ -196,7 +214,6 @@ void MainWindow::on_systemButton_clicked()
     int dialogY = mainWindowGeometry.y() + 100;
 
     systemDialog.move(dialogX, dialogY);
-
     systemDialog.exec();
 }
 
@@ -219,13 +236,21 @@ void MainWindow::on_inputsButton_clicked()
 
 void MainWindow::on_runButton_clicked()
 {
-
     if (ui->runButton->text() == "RUN") {
+        qDebug() << "RUNNING";
         ui->runButton->setText("STOP");
+        ui->runButton->update();
+        timer->start(100); // Update every x milliseconds
+
+
     }
     else {
+        qDebug() << "STOPPED";
         ui->runButton->setText("RUN");
+        ui->runButton->update();
+        timer->stop();
     }
-    ui->runButton->update();
+
+
 }
 

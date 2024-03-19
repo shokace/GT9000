@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QChartView>
 #include <QMainWindow>
 #include <QtCharts/QChart>
 #include <QtCharts/QLineSeries>
+#include <QTimer>
 
 
 QT_BEGIN_NAMESPACE
@@ -36,9 +38,13 @@ private slots:
 
     void on_runButton_clicked();
 
+    void updateLabels();
+
 private:
     Ui::MainWindow *ui;
     QLineSeries *series;
     QChart *chart;
+    QTimer *timer;
+    QChartView chartView;
 };
 #endif // MAINWINDOW_H

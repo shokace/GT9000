@@ -446,7 +446,7 @@ SETTINGS</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="maxLabel">
               <property name="font">
                <font>
                 <pointsize>11</pointsize>
@@ -458,7 +458,7 @@ SETTINGS</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="minLabel">
               <property name="font">
                <font>
                 <pointsize>11</pointsize>
@@ -598,7 +598,7 @@ SETTINGS</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_7">
+                <widget class="QLabel" name="pk2pkLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -610,7 +610,7 @@ SETTINGS</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_8">
+                <widget class="QLabel" name="countLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
