@@ -34,6 +34,8 @@ private slots:
 
     void on_inputsButton_clicked();
 
+    void on_runButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QLineSeries *series;
