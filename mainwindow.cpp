@@ -4,6 +4,12 @@
 #include <QFrame>
 #include <QVBoxLayout>
 #include <QIcon>
+#include <QtCharts>
+#include <QLineSeries>
+#include <QChartView>
+#include <QRandomGenerator>
+
+
 
 #include "mainwindow.h"
 #include "CustomToolButton.h"
@@ -15,24 +21,54 @@
 
 
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
 
     this->setWindowFlags(Qt::WindowCloseButtonHint);
     this->setWindowTitle("GT9000");
-
-
-    ui->exitButton = new CustomToolButton;
-    ui->exitButton->setText("TEST");
+    //ui->exitButton = new CustomToolButton;
+    //ui->exitButton->setText("TEST");
     //ui->exitButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+    series = new QLineSeries();
+    chart = new QChart();
+    chart->addSeries(series);
+
+    // Customize chart title, animations, legend, etc.
+    chart->setTitle("Real-time Data");
+    chart->setAnimationOptions(QChart::NoAnimation);
+
+    // Create the QChartView with the chart
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    // Set the QChartView as the child of the graphFrame
+    if (ui->graphFrame->layout() == nullptr) {
+        ui->graphFrame->setLayout(new QVBoxLayout()); // QVBoxLayout can be replaced with any other layout type
+    }
+
+    // Now that graphFrame has a layout, add chartView to it
+    ui->graphFrame->layout()->addWidget(chartView);
+
+
+    QTimer *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateChartData);
+    timer->start(10); // Update every 1000 milliseconds (1 second)
 
 }
 
+void MainWindow::updateChartData() {
+    static int x = 0;
+    double y = (QRandomGenerator::global()->generateDouble() * 2.0) - 1.0;
 
+    series->append(x++, y);
+    chart->removeSeries(series);
+    chart->addSeries(series);
+    chart->createDefaultAxes(); // Adjust axes to accommodate new data
+}
 
 MainWindow::~MainWindow()
 {

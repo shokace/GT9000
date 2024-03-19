@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtCharts/QChart>
+#include <QtCharts/QLineSeries>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,6 +22,8 @@ public:
 
 
 private slots:
+    void updateChartData();
+
     void on_exitButton_clicked();
 
     void on_settingsButton_clicked();
@@ -31,6 +36,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
+    QLineSeries *series;
+    QChart *chart;
 };
 #endif // MAINWINDOW_H
