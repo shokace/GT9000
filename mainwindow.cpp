@@ -119,6 +119,7 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 void MainWindow::updateLabels(){
 
     int pointCount = series->count();
+    qDebug() << pointCount;
     QString pointCountStr = QString::number(pointCount);
     ui->countLabel->setText(pointCountStr);
 
@@ -135,9 +136,9 @@ void MainWindow::updateChartData() {
     series->append(x, y);
 
     // Keep only the latest 1000 points
-    if (series->count() > 1000) {
-        series->remove(0); // Remove the oldest point
-    }
+    //if (series->count() > 1000) {
+    //    series->remove(0); // Remove the oldest point
+    //}
 
     // Adjust the x-axis range to keep the latest points in view
     QValueAxis *axisX = qobject_cast<QValueAxis *>(chart->axes(Qt::Horizontal).first());
@@ -237,7 +238,7 @@ void MainWindow::on_runButton_clicked()
         qDebug() << "RUNNING";
         ui->runButton->setText("STOP");
         ui->runButton->update();
-        timer->start(100); // Update every x milliseconds
+        timer->start(10); // Update every x milliseconds
 
 
     }
