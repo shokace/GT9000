@@ -156,9 +156,6 @@ void MainWindow::updateChartData() {
 
 MainWindow::~MainWindow()
 {
-    delete timer;
-    delete chart;
-    delete series;
     delete ui;
 }
 
