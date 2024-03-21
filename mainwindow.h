@@ -40,11 +40,15 @@ private slots:
 
     void updateLabels();
 
+    void updatePk2pk();
+
 private:
     Ui::MainWindow *ui;
     QLineSeries *series;
     QChart *chart;
     QTimer *timer;
     QChartView chartView;
+    double minValue = std::numeric_limits<double>::max();
+    double maxValue = std::numeric_limits<double>::lowest();
 };
 #endif // MAINWINDOW_H

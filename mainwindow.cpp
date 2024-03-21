@@ -36,9 +36,9 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateChartData);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateLabels);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updatePk2pk);
+
     //timer->start(100); // Update every x milliseconds
-
-
 
 
     series = new QLineSeries();
@@ -116,12 +116,26 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
 }
 
+void MainWindow::updatePk2pk(){
+
+    if (series->count()){
+        for (const QPointF &point : series->points()) {
+            minValue = std::min(minValue, point.y());
+            maxValue = std::max(maxValue, point.y());
+        }
+
+        double peakToPeak = maxValue - minValue;
+        ui->pk2pkLabel->setText(QString::number(peakToPeak) + "V");
+    }
+
+}
+
 void MainWindow::updateLabels(){
 
     int pointCount = series->count();
-    qDebug() << pointCount;
     QString pointCountStr = QString::number(pointCount);
     ui->countLabel->setText(pointCountStr);
+
 
 
     //pk2pk needs to do op as chart is being updated...
@@ -134,6 +148,7 @@ void MainWindow::updateChartData() {
     double y = (QRandomGenerator::global()->generateDouble() * 2.0) - 1.0;
 
     series->append(x, y);
+
 
     // Keep only the latest 1000 points
     //if (series->count() > 1000) {
