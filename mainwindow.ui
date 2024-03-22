@@ -275,15 +275,21 @@ SETTINGS</string>
        <item>
         <widget class="QFrame" name="frame_3">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>200</width>
+           <width>400</width>
            <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="frameShape">
@@ -315,7 +321,7 @@ SETTINGS</string>
             </property>
             <property name="minimumSize">
              <size>
-              <width>10</width>
+              <width>50</width>
               <height>0</height>
              </size>
             </property>
@@ -343,6 +349,12 @@ SETTINGS</string>
              </property>
              <item>
               <widget class="QLabel" name="mean">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -361,6 +373,12 @@ SETTINGS</string>
              </item>
              <item>
               <widget class="QLabel" name="stDev">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -373,6 +391,12 @@ SETTINGS</string>
              </item>
              <item>
               <widget class="QLabel" name="max">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -385,6 +409,12 @@ SETTINGS</string>
              </item>
              <item>
               <widget class="QLabel" name="min">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>

@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     connect(timer, &QTimer::timeout, this, &MainWindow::updateChartData);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateLabels);
     connect(timer, &QTimer::timeout, this, &MainWindow::updatePk2pk);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateMean);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateStandardDeviation);
 
     //timer->start(100); // Update every x milliseconds
 
@@ -114,7 +116,49 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     }
 
 
+
 }
+
+void MainWindow::updateMean() {
+    int count = series->count();
+    double sum = 0.0;
+    double c = 0.0; // A running compensation for lost low-order bits.
+
+    for (const QPointF &point : series->points()) {
+        double y = point.y() - c;    // So far, so good: c is zero.
+        double t = sum + y;          // Alas, sum is big, y small, so low-order digits of y are lost.
+        c = (t - sum) - y;           // (t - sum) recovers the high-order part of y; subtracting y recovers -(low part of y)
+        sum = t;                     // Algebraically, c should always be zero. Beware overly aggressive optimizing compilers!
+    }
+
+    double mean = 0.0;
+    if (count > 0) {
+        mean = sum / count; // Calculate the mean
+    }
+
+    ui->meanLabel->setText(QString::number(mean, 'g', 6)); // Set the mean to the label, 'g' format with 15 significant digits
+}
+
+void MainWindow::updateStandardDeviation() {
+
+    double sumOfSquares = 0.0;
+    double c = 0.0; // Compensation for lost low-order bits
+    int count = series->count();
+
+    for (const QPointF &point : series->points()) {
+        double y = (point.y() - mean) * (point.y() - mean) - c;
+        double t = sumOfSquares + y;
+        c = (t - sumOfSquares) - y;
+        sumOfSquares = t;
+    }
+
+    double variance = count > 1 ? sumOfSquares / (count - 1) : 0;
+    double stdDeviation = sqrt(variance);
+
+    ui->standardDeviationLabel->setText(QString::number(stdDeviation, 'f', 6)); // 'f' for fixed-point notation, 6 digits precision
+}
+
+
 
 void MainWindow::updatePk2pk(){
 
@@ -126,6 +170,8 @@ void MainWindow::updatePk2pk(){
 
         double peakToPeak = maxValue - minValue;
         ui->pk2pkLabel->setText(QString::number(peakToPeak) + "V");
+        ui->minLabel->setText(QString::number(minValue));
+        ui->maxLabel->setText(QString::number(maxValue));
     }
 
 }
@@ -135,7 +181,6 @@ void MainWindow::updateLabels(){
     int pointCount = series->count();
     QString pointCountStr = QString::number(pointCount);
     ui->countLabel->setText(pointCountStr);
-
 
 
     //pk2pk needs to do op as chart is being updated...
@@ -148,12 +193,6 @@ void MainWindow::updateChartData() {
     double y = (QRandomGenerator::global()->generateDouble() * 2.0) - 1.0;
 
     series->append(x, y);
-
-
-    // Keep only the latest 1000 points
-    //if (series->count() > 1000) {
-    //    series->remove(0); // Remove the oldest point
-    //}
 
     // Adjust the x-axis range to keep the latest points in view
     QValueAxis *axisX = qobject_cast<QValueAxis *>(chart->axes(Qt::Horizontal).first());
@@ -253,7 +292,7 @@ void MainWindow::on_runButton_clicked()
         qDebug() << "RUNNING";
         ui->runButton->setText("STOP");
         ui->runButton->update();
-        timer->start(10); // Update every x milliseconds
+        timer->start(1000); // Update every x milliseconds
 
 
     }

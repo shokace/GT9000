@@ -42,6 +42,10 @@ private slots:
 
     void updatePk2pk();
 
+    void updateMean();
+
+    void updateStandardDeviation();
+
 private:
     Ui::MainWindow *ui;
     QLineSeries *series;
@@ -50,5 +54,6 @@ private:
     QChartView chartView;
     double minValue = std::numeric_limits<double>::max();
     double maxValue = std::numeric_limits<double>::lowest();
+    double mean = 0.0;
 };
 #endif // MAINWINDOW_H
