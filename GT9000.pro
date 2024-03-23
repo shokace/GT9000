@@ -8,6 +8,11 @@ CONFIG += c++17
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+
+INCLUDEPATH += $$PWD/gt668
+
+LIBS += -L$$PWD/gt668/libs -lGT668
+
 SOURCES += \
     inputsdialog.cpp \
     main.cpp \
@@ -17,6 +22,7 @@ SOURCES += \
     unitdialog.cpp
 
 HEADERS += \
+    gt668/gt668drv.h \
     inputsdialog.h \
     mainwindow.h \
     settingsdialog.h \
@@ -35,6 +41,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    icons.qrc \
-    icons.qrc
+DISTFILES += \
+    .gitignore
+
+

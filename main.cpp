@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "gt668drv.h"
 
 #include <QApplication>
 #include <QSplashScreen>
@@ -12,7 +13,10 @@ int main(int argc, char *argv[])
     QSplashScreen splash(pixmap);
     splash.setWindowState(Qt::WindowFullScreen);
     splash.show();
+    GT668EnumerateBoards(GT_True);
     splash.showMessage("Initializing...", Qt::AlignBottom | Qt::AlignCenter, Qt::white);
+
+
 
 
 
