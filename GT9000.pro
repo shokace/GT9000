@@ -9,8 +9,6 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    chartmanager.cpp \
-    customtoolbutton.cpp \
     inputsdialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,8 +17,6 @@ SOURCES += \
     unitdialog.cpp
 
 HEADERS += \
-    chartmanager.h \
-    customtoolbutton.h \
     inputsdialog.h \
     mainwindow.h \
     settingsdialog.h \

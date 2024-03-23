@@ -196,12 +196,9 @@ void MainWindow::updateChartData() {
 
     // Adjust the x-axis range to keep the latest points in view
     QValueAxis *axisX = qobject_cast<QValueAxis *>(chart->axes(Qt::Horizontal).first());
-    if(x > 100) {
-        axisX->setRange(x - 100, x);
-    }
-    else {
-        axisX->setRange(0, x);
-    }
+
+    axisX->setRange(0, x);
+
 
     // Adjust the y-axis range
     QValueAxis *axisY = qobject_cast<QValueAxis *>(chart->axes(Qt::Vertical).first());
@@ -292,7 +289,7 @@ void MainWindow::on_runButton_clicked()
         qDebug() << "RUNNING";
         ui->runButton->setText("STOP");
         ui->runButton->update();
-        timer->start(1000); // Update every x milliseconds
+        timer->start(10); // Update every x milliseconds
 
 
     }
